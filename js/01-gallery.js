@@ -6,8 +6,6 @@ const itemsMarkUp = createGalleryItemsMarkUp(galleryItems);
 
 galleryContainer.insertAdjacentHTML('beforeend', itemsMarkUp);
 
-galleryContainer.addEventListener('click', onContainerClick);
-
 function createGalleryItemsMarkUp(galleryItems) {
  const markUp = galleryItems.map(({preview, original, description}) => {
  return `
@@ -26,19 +24,26 @@ function createGalleryItemsMarkUp(galleryItems) {
  return markUp.join('');
 }
 
-// function onImageClick(event) {
+galleryContainer.addEventListener('click', onImageClick);
 
-// console.log(event.target);
-// }
-
-// const OriginalImageUrl = event.target.dataset.source;
+function onImageClick(event) {
+    event.preventDefault();
+    if (!event.target.classList.contains("gallery__image")) {
+        return;
+    }
 
 const instance = basicLightbox.create(`
-    <img src="${original}" />
+    <img src="${event.target.dataset.source}" width="1200" height=auto/>
 `)
-
 instance.show()
+// {
+//     onShow: (instance) => {},  
+//     onClose: (instance) => {}
+// }
+}
 
 
 
-console.log(galleryItems);
+
+
+// console.log(galleryItems);
