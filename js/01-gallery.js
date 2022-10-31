@@ -22,19 +22,19 @@ function createGalleryItemsMarkUp(galleryItems) {
     </div>
  `;
  });
- 
+
  return markUp.join('');
 }
 
-function onImageClick(event) {
+// function onImageClick(event) {
 
-console.log(event.target);
-}
+// console.log(event.target);
+// }
 
-const OriginalImageUrl = event.target.dataset.source;
+// const OriginalImageUrl = event.target.dataset.source;
 
 const instance = basicLightbox.create(`
-    <img src="${OriginalImageUrl}" />
+    <img src="${original}" />
 `)
 
 instance.show()
