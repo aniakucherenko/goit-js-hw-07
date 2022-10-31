@@ -21,8 +21,8 @@ function createGalleryItemsMarkUp(galleryItems) {
       </a>
     </div>
  `;
-
  });
+ 
  return markUp.join('');
 }
 
