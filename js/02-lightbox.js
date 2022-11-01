@@ -25,4 +25,4 @@ function createGalleryItemsMarkUp(items) {
 
 });
 
-console.log(galleryItems);
+// console.log(galleryItems);
